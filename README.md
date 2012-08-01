@@ -31,5 +31,6 @@ How to build
 Todo
 ==============================
 
+- Update marvelc's repo
 - Gather known bugs for this ROM
 - Add finished nightly script
