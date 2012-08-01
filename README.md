@@ -28,6 +28,25 @@ How to build
 - Run this command: "repo sync; source build/envsetup.sh; lunch cm_marvel-eng; export USE_CCACHE=1"
 - Do the build command: "make -jx bacon"
 
+Repos that are for this project
+===============================
+
+The following repos are based for this project:
+
+- https://github.com/benjamingwynn/cm_marvel_jellybean_port
+- https://github.com/benjamingwynn/cm_vendor_htc_marvel
+- https://github.com/benjamingwynn/cm_device_htc_marvel-common
+- https://github.com/benjamingwynn/cm_device_htc_marvel
+- https://github.com/benjamingwynn/cm_vendor_qcom_msm7x27
+- https://github.com/benjamingwynn/android_hardware_qcom_audio
+- https://github.com/benjamingwynn/android_bionic
+- https://github.com/benjamingwynn/cm_device_htc_marvelc
+- https://github.com/benjamingwynn/twrp_device_htc_msm7x27-recovery
+- https://github.com/benjamingwynn/cm_kernel_htc_msm7227 **disused**
+- https://github.com/benjamingwynn/android_hardware_qcom_display **disused**
+- https://github.com/benjamingwynn/cm_device_htc_msm7x27-common **disused**
+- https://github.com/benjamingwynn/android_frameworks_base **disused**
+
 Todo
 ==============================
 
