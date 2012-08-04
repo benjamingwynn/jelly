@@ -19,13 +19,11 @@ Known bugs
 ==============================
 
 - Any bugs that CM9 has
-- Phone and any other mobile connection is broken (wifi and bluetooth work) [FIXING]
+- Phone and any other mobile connection is broken (wifi and bluetooth work)
 - Widgets on the launcher are too big, and hang off the bottom and into the dock
 - Google now doesn't work
-- Settings force closes when you click on storage [FIXED IN NEXT BUILD]
 - Audio doesn't play through headphones
 - Video playback doesn't work
-- USB mounting doesn't work [FIXED IN NEXT BUILD]
 - Microphone doesn't work (in theory, this is also why Google Now doesn't)
 - Camera doesn't work (that's why the app hides from the drawer)
 - Some very minor graphic errors, such as the notification drawer being slow.
