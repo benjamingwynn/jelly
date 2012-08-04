@@ -9,8 +9,8 @@
 
        <!-- benjamingwynn's CyanogenMod 10 source. Please see the readme before you continue. -->
 
-       <!-- Keep modpunks kernel. Use the ICS branch as the jellybean branch isn't created yet. -->
-       <project name="projects/marvel/kernel_htc_msm7227.git" path="kernel/htc/msm7227" revision="ics" remote="modpunk" />
+       <!-- Use modpunks kernel -->
+       <project name="projects/marvel/kernel_htc_msm7227.git" path="kernel/htc/msm7227" remote="modpunk" revision="jellybean" />
        <!-- Sync vendors -->
        <project name="benjamingwynn/cm_vendor_qcom_msm7x27" path="vendor/qcom/msm7x27" remote="octocat" />
        <project name="benjamingwynn/cm_vendor_htc_marvelc" path="vendor/htc/marvelc" remote="octocat" />
@@ -20,18 +20,19 @@
        <project name="benjamingwynn/cm_device_htc_marvelc" path="device/htc/marvelc" remote="octocat" />
        <project name="benjamingwynn/cm_device_htc_marvel" path="device/htc/marvel" remote="octocat" />
        <project name="benjamingwynn/cm_device_htc_marvel-common" path="device/htc/marvel-common" remote="octocat" />
-       <!-- Recovery device tree (you'll need this even if you're not building TWRP <3) -->
+       <!-- Recovery device tree (you'll need this even if you're not building TWRP) -->
        <project name="benjamingwynn/twrp_device_htc_msm7x27-recovery.git" path="device/htc/msm7x27-recovery" remote="octocat" revision="master" />
        <!-- Fix bionic to support ARMv6 -->
        <remove-project name="CyanogenMod/android_bionic" />
        <project name="benjamingwynn/android_bionic" path="bionic" remote="octocat" />
-       <!-- Fix audio/media -->
+       <!-- Fix hardware -->
        <remove-project name="CyanogenMod/android_external_srec" />
        <project name="benjamingwynn/android_external_srec" path="external/srec" remote="octocat" />
-       <remove-project name="CyanogenMod/android_hardware_qcom_audio" />
-       <project name="benjamingwynn/android_hardware_qcom_audio" path="hardware/qcom/audio" remote="octocat" />
        <remove-project name="CyanogenMod/android_hardware_qcom_media" />
        <project name="benjamingwynn/android_hardware_qcom_media" path="hardware/qcom/media" remote="octocat" />
        <remove-project name="CyanogenMod/android_hardware_msm7k" />
        <project name="benjamingwynn/android_hardware_msm7k" path="hardware/msm7k" remote="octocat" />
+       <!-- Add some debug messages to RIL -->
+       <remove-project name="CyanogenMod/android_hardware_ril" />
+       <project name="benjamingwynn/android_hardware_ril" path="hardware/ril" remote="octocat" />
    </manifest>
