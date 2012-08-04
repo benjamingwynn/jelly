@@ -38,10 +38,11 @@ The following repos are based for this project:
 - https://github.com/benjamingwynn/cm_device_htc_marvel-common
 - https://github.com/benjamingwynn/cm_device_htc_marvel
 - https://github.com/benjamingwynn/cm_vendor_qcom_msm7x27
-- https://github.com/benjamingwynn/android_hardware_qcom_audio
 - https://github.com/benjamingwynn/android_bionic
 - https://github.com/benjamingwynn/cm_device_htc_marvelc
 - https://github.com/benjamingwynn/twrp_device_htc_msm7x27-recovery
+- https://github.com/benjamingwynn/android_hardware_ril
+- https://github.com/benjamingwynn/android_hardware_qcom_audio **disused**
 - https://github.com/benjamingwynn/cm_kernel_htc_msm7227 **disused**
 - https://github.com/benjamingwynn/android_hardware_qcom_display **disused**
 - https://github.com/benjamingwynn/cm_device_htc_msm7x27-common **disused**
