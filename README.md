@@ -18,7 +18,17 @@ Credits
 Known bugs
 ==============================
 
-- Doesn't complete boot, audio issue. 
+- Any bugs that CM9 has
+- Phone and any other mobile connection is broken (wifi and bluetooth work) [FIXING]
+- Widgets on the launcher are too big, and hang off the bottom and into the dock
+- Google now doesn't work
+- Settings force closes when you click on storage [FIXED IN NEXT BUILD]
+- Audio doesn't play through headphones
+- Video playback doesn't work
+- USB mounting doesn't work [FIXED IN NEXT BUILD]
+- Microphone doesn't work (in theory, this is also why Google Now doesn't)
+- Camera doesn't work (that's why the app hides from the drawer)
+- Some very minor graphic errors, such as the notification drawer being slow.
 
 How to build
 ==============================
@@ -47,10 +57,3 @@ The following repos are based for this project:
 - https://github.com/benjamingwynn/android_hardware_qcom_display **disused**
 - https://github.com/benjamingwynn/cm_device_htc_msm7x27-common **disused**
 - https://github.com/benjamingwynn/android_frameworks_base **disused**
-
-Todo
-==============================
-
-- Update marvelc's repo
-- Gather known bugs for this ROM
-- Add finished nightly script
