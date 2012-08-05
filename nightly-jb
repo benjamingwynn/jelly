@@ -1,0 +1,34 @@
+# Nightly jellybean building script
+#
+# for benjamingwynn's jellybean marvel builds.
+echo "Jellybean Nightly build script"
+echo " "
+echo "Working..."
+cd ~/cm-jb
+echo "Enable ccahce"
+export USE_CCACHE=1
+echo "Compile for the marvel..."
+source build/envsetup.sh; lunch cm_marvel-eng
+echo "Syncing..."
+repo sync
+echo "Cleaning..."
+make clean
+make clobber
+echo "Compiling..."
+make -j8 bacon
+echo "Setting dates..."
+a="$(date +%Y%m%d)"
+b="$(date +%d-%m-%Y)"
+if [ -f $b ]
+  then
+    echo "Jellybean has already been built today, not uploading"
+    clear
+    echo "Done! Build wasn't uploaded."
+  else
+    touch $b
+    echo "Uploading to goo.im..."
+    scp -P 2222 out/target/product/marvel/"cm-10-"$a"-EXPERIMENTAL-marvel-CM-10-NIGHTLY-"$b".zip" benjamingwynn@upload.goo.im:public_html/jb-builds/"cm-10-marvel-"$b".zip"
+    clear
+    echo "Done! Build is at http://goo.im/devs/benjamingwynn/jb-builds"
+fi
+echo " "
