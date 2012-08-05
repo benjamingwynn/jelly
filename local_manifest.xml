@@ -32,7 +32,10 @@
        <project name="benjamingwynn/android_hardware_qcom_media" path="hardware/qcom/media" remote="octocat" />
        <remove-project name="CyanogenMod/android_hardware_msm7k" />
        <project name="benjamingwynn/android_hardware_msm7k" path="hardware/msm7k" remote="octocat" />
-       <!-- Add some debug messages to RIL -->
+       <!-- Fix RIL -->
        <remove-project name="CyanogenMod/android_hardware_ril" />
        <project name="benjamingwynn/android_hardware_ril" path="hardware/ril" remote="octocat" />
+       <!-- Launcher fix -->
+       <remove-project name="CyanogenMod/android_packages_apps_Launcher2" />
+       <project name="benjamingwynn/android_packages_apps_Launcher2" path="packages/apps/Launcher2" remote="octocat" />
    </manifest>
