@@ -42,7 +42,6 @@ Repos that are for this project
 The following repos are based for this project:
 
 - https://github.com/benjamingwynn/android_bionic
-- https://github.com/benjamingwynn/android_external_srec
 - https://github.com/benjamingwynn/android_hardware_ril
 - https://github.com/benjamingwynn/android_hardware_qcom_media
 - https://github.com/benjamingwynn/android_hardware_msm7k
@@ -54,6 +53,7 @@ The following repos are based for this project:
 - https://github.com/benjamingwynn/cm_vendor_htc_marvel
 - https://github.com/benjamingwynn/cm_vendor_qcom_msm7x27
 - https://github.com/benjamingwynn/twrp_device_htc_msm7x27-recovery
+- https://github.com/benjamingwynn/android_external_srec **deprecated**
 - https://github.com/benjamingwynn/android_frameworks_base **deprecated**
 - https://github.com/benjamingwynn/android_hardware_qcom_audio **deprecated**
 - https://github.com/benjamingwynn/android_hardware_qcom_display **deprecated**
