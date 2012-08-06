@@ -42,7 +42,11 @@ Repos that are for this project
 The following repos are based for this project:
 
 - https://github.com/benjamingwynn/android_bionic
+- https://github.com/benjamingwynn/android_external_srec
 - https://github.com/benjamingwynn/android_hardware_ril
+- https://github.com/benjamingwynn/android_hardware_qcom_media
+- https://github.com/benjamingwynn/android_hardware_msm7k
+- https://github.com/benjamingwynn/android_packages_apps_Launcher2
 - https://github.com/benjamingwynn/cm_device_htc_marvel-common
 - https://github.com/benjamingwynn/cm_device_htc_marvel
 - https://github.com/benjamingwynn/cm_device_htc_marvelc
