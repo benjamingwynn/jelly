@@ -20,20 +20,21 @@ echo "Setting dates..."
 a="$(date +%Y%m%d)"
 b="$(date +%d-%m-%Y)"
 if [ "$1" = "-u" ]
-if [ -f $b ]
   then
-    echo "Jellybean has already been built today, not uploading"
-    clear
-    echo "Done! Build wasn't uploaded."
-  else
-    touch $b
-    echo "Uploading to goo.im..."
-    scp -P 2222 out/target/product/marvel/"cm-10-"$a"-EXPERIMENTAL-marvel-CM-10-NIGHTLY-"$b".zip" benjamingwynn@upload.goo.im:public_html/jb-builds/"cm-10-marvel-"$b".zip"
-    clear
-    echo "Done! Build is at http://goo.im/devs/benjamingwynn/jb-builds"
-fi
+    if [ -f $b ]
+      then
+        echo "Jellybean has already been built today, not uploading"
+        clear
+        echo "Done! Build wasn't uploaded."
+      else
+        touch $b
+        echo "Uploading to goo.im..."
+        scp -P 2222 out/target/product/marvel/"cm-10-"$a"-EXPERIMENTAL-marvel-CM-10-NIGHTLY-"$b".zip" benjamingwynn@upload.goo.im:public_html/jb-builds/"cm-10-marvel-"$b".zip"
+        clear
+        echo "Done! Build is at http://goo.im/devs/benjamingwynn/jb-builds"
+    fi
 else
-    echo "Jellybean has already been built today, not uploading"
+    echo "-u flag not given, not uploading."
     clear
     echo "Done! Build wasn't uploaded."
 fi

@@ -41,17 +41,17 @@ Repos that are for this project
 
 The following repos are based for this project:
 
-- https://github.com/benjamingwynn/android_bionic
-- https://github.com/benjamingwynn/android_hardware_ril
-- https://github.com/benjamingwynn/cm_device_htc_marvel-common
-- https://github.com/benjamingwynn/cm_device_htc_marvel
-- https://github.com/benjamingwynn/cm_device_htc_marvelc
-- https://github.com/benjamingwynn/cm_marvel_jellybean_port
-- https://github.com/benjamingwynn/cm_vendor_htc_marvel
-- https://github.com/benjamingwynn/cm_vendor_qcom_msm7x27
-- https://github.com/benjamingwynn/twrp_device_htc_msm7x27-recovery
-- https://github.com/benjamingwynn/android_frameworks_base **deprecated**
-- https://github.com/benjamingwynn/android_hardware_qcom_audio **deprecated**
-- https://github.com/benjamingwynn/android_hardware_qcom_display **deprecated**
-- https://github.com/benjamingwynn/cm_kernel_htc_msm7227 **deprecated**
-- https://github.com/benjamingwynn/cm_device_htc_msm7x27-common **deprecated**
+- https://github.com/benjamingwynn/android_bionic ................... Adds Armv6 patch ................
+- https://github.com/benjamingwynn/android_hardware_ril ............. Lowers RIL version .............. *will be removed*
+- https://github.com/benjamingwynn/cm_device_htc_marvel-common ...... Common device tree ..............
+- https://github.com/benjamingwynn/cm_device_htc_marvel ............. Marvel device tree ..............
+- https://github.com/benjamingwynn/cm_device_htc_marvelc ............ Marvelc device tree ............. *outdated*
+- https://github.com/benjamingwynn/cm_marvel_jellybean_port ......... Other project files .............
+- https://github.com/benjamingwynn/cm_vendor_htc_marvel ............. Marvel/c vendor .................
+- https://github.com/benjamingwynn/cm_vendor_qcom_msm7x27 ........... Qcom vendor ..................... 
+- https://github.com/benjamingwynn/twrp_device_htc_msm7x27-recovery . Recovery tree ...................
+- https://github.com/benjamingwynn/android_frameworks_base .......... Fixing frameworks ............... **deprecated**
+- https://github.com/benjamingwynn/android_hardware_qcom_audio ...... Fix audio bugs .................. **deprecated**
+- https://github.com/benjamingwynn/android_hardware_qcom_display .... Fix display compiling errors .... **deprecated**
+- https://github.com/benjamingwynn/cm_kernel_htc_msm7227 ............ Kernel tree ..................... **deprecated**
+- https://github.com/benjamingwynn/cm_device_htc_msm7x27-common ..... Common MSM7x27 tree ............. **deprecated**
