@@ -35,7 +35,4 @@
        <!-- Fix RIL -->
        <remove-project name="CyanogenMod/android_hardware_ril" />
        <project name="benjamingwynn/android_hardware_ril" path="hardware/ril" remote="octocat" />
-       <!-- Launcher fix -->
-       <remove-project name="CyanogenMod/android_packages_apps_Launcher2" />
-       <project name="benjamingwynn/android_packages_apps_Launcher2" path="packages/apps/Launcher2" remote="octocat" />
    </manifest>
