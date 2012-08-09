@@ -1,14 +1,55 @@
 # Nightly jellybean building script
 #
 # for benjamingwynn's jellybean marvel builds.
+
+#- Make sure we are using the script correctly, if we aren't then throw errors...
+
+if [ "$1" = "-u" ]
+  then
+     echo "FATAL: -u flag given before marvel/marvelc flag."
+     echo " "
+     echo "For usage, type -?"
+     exit
+fi
+
+if [ "$1" = "" ]
+  then
+     echo "FATAL: No flags given, stopping."
+     echo " "
+     echo "For usage, type -?"
+     exit
+fi
+
+#- jellyhelp :)
+
+if [ "$1" = "-?" ]
+  then
+     echo "jelly | A simple compiling script"
+     echo "Created by Benjamin Gwynn"
+     echo " "
+     echo "Usage: ./jelly [device] [flags]"
+     echo " "
+     echo "-u    Upload"
+     exit
+fi
+
+#- ...otherwise, carry on.
 echo "Jellybean Nightly build script"
 echo " "
 echo "Working..."
 cd ~/cm-jb
-echo "Enable ccahce"
+source build/envsetup.sh; 
 export USE_CCACHE=1
-echo "Compile for the marvel..."
-source build/envsetup.sh; lunch cm_marvel-eng
+if [ "$1" = "marvel" ]
+  then
+     echo "Compile for the marvel..."
+     lunch cm_marvel-eng
+fi
+if [ "$1" = "marvelc" ]
+  then
+     echo "Compile for the marvelc..."
+     lunch cm_marvelc-eng
+fi
 echo "Syncing..."
 repo sync
 echo "Cleaning..."
@@ -19,7 +60,7 @@ make -j8 bacon
 echo "Setting dates..."
 a="$(date +%Y%m%d)"
 b="$(date +%d-%m-%Y)"
-if [ "$1" = "-u" ]
+if [ "$2" = "-u" ]
   then
     if [ -f $b ]
       then
