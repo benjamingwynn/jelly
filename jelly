@@ -6,7 +6,15 @@
 
 if [ "$1" = "-u" ]
   then
-     echo "FATAL: -u flag given before marvel/marvelc flag."
+     echo "FATAL: -u flag given before device flag."
+     echo " "
+     echo "For usage, type -?"
+     exit
+fi
+
+if [ "$2" = "-u" ]
+  then
+     echo "FATAL: -u flag given before type flag."
      echo " "
      echo "For usage, type -?"
      exit
@@ -14,7 +22,15 @@ fi
 
 if [ "$1" = "" ]
   then
-     echo "FATAL: No flags given, stopping."
+     echo "FATAL: No device flag given, stopping."
+     echo " "
+     echo "For usage, type -?"
+     exit
+fi
+
+if [ "$2" = "" ]
+  then
+     echo "FATAL: No type flag given, stopping."
      echo " "
      echo "For usage, type -?"
      exit
@@ -24,12 +40,21 @@ fi
 
 if [ "$1" = "-?" ]
   then
-     echo "jelly | A simple compiling script"
+     echo "jelly | A simple CM compiling script"
      echo "Created by Benjamin Gwynn"
      echo " "
-     echo "Usage: ./jelly [device] [flags]"
+     echo "Usage: ./jelly [device] [type] [flags]"
      echo " "
+     echo "Flags:"
+     echo ""
      echo "-u    Upload"
+     echo ""
+     echo "Types:"
+     echo ""
+     echo "user"
+     echo "userdebug"
+     echo "eng"
+     echo ""
      exit
 fi
 
@@ -40,16 +65,8 @@ echo "Working..."
 cd ~/cm-jb
 source build/envsetup.sh; 
 export USE_CCACHE=1
-if [ "$1" = "marvel" ]
-  then
-     echo "Compile for the marvel..."
-     lunch cm_marvel-eng
-fi
-if [ "$1" = "marvelc" ]
-  then
-     echo "Compile for the marvelc..."
-     lunch cm_marvelc-eng
-fi
+echo "Compile for the $1..."
+lunch cm_$1-$2
 echo "Syncing..."
 repo sync
 echo "Cleaning..."
@@ -60,7 +77,7 @@ make -j8 bacon
 echo "Setting dates..."
 a="$(date +%Y%m%d)"
 b="$(date +%d-%m-%Y)"
-if [ "$2" = "-u" ]
+if [ "$3" = "-u" ]
   then
     if [ -f $b ]
       then
