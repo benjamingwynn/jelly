@@ -61,6 +61,8 @@ fi
 #- ...otherwise, carry on.
 echo "Jellybean Nightly build script"
 echo " "
+echo "Cleaning up any update mess"
+rm -rf cm_marvel_jellybean_port
 echo "Updating script..."
 git clone git://github.com/benjamingwynn/cm_marvel_jellybean_port.git
 cp ~/cm_marvel_jellybean_port/jelly ~/jelly
@@ -69,8 +71,6 @@ echo "Working..."
 cd ~/cm-jb
 source build/envsetup.sh; 
 export USE_CCACHE=1
-echo "Cleaning up update mess"
-rm -rf cm_marvel_jellybean_port
 echo "Compile for the $1..."
 lunch cm_$1-$2
 echo "Syncing..."
