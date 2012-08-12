@@ -84,18 +84,18 @@ echo "Setting dates..."
 a="$(date +%Y%m%d)"
 b="$(date +%d-%m-%Y)"
 c="$(date +%m)"
-if [ "$c" = "01" ] then d="January"
-if [ "$c" = "02" ] then d="February"
-if [ "$c" = "03" ] then d="March"
-if [ "$c" = "04" ] then d="April"
-if [ "$c" = "05" ] then d="May"
-if [ "$c" = "06" ] then d="June"
-if [ "$c" = "07" ] then d="July"
-if [ "$c" = "08" ] then d="August"
-if [ "$c" = "09" ] then d="September"
-if [ "$c" = "10" ] then d="October"
-if [ "$c" = "11" ] then d="November"
-if [ "$c" = "12" ] then d="December"
+if [ "$c" = "01" ]; then d="January"; fi
+if [ "$c" = "02" ]; then d="February"; fi
+if [ "$c" = "03" ]; then d="March"; fi
+if [ "$c" = "04" ]; then d="April"; fi
+if [ "$c" = "05" ]; then d="May"; fi
+if [ "$c" = "06" ]; then d="June"; fi
+if [ "$c" = "07" ]; then d="July"; fi
+if [ "$c" = "08" ]; then d="August"; fi
+if [ "$c" = "09" ]; then d="September"; fi
+if [ "$c" = "10" ]; then d="October"; fi
+if [ "$c" = "11" ]; then d="November"; fi
+if [ "$c" = "12" ]; then d="December"; fi
 e="$(date +%Y)"
 if [ "$3" = "-u" ]
   then
