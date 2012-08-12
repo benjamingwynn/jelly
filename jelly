@@ -107,7 +107,7 @@ if [ "$3" = "-u" ]
       else
         touch $b
         echo "Uploading to goo.im..."
-        scp -P 2222 out/target/product/$1/"cm-10-"$a"-EXPERIMENTAL-"$1"-CM-10-NIGHTLY-"$b".zip" benjamingwynn@upload.goo.im:public_html/$1/CyanogenMod10/$e/$c" - "$d/"CM10-"$c".zip"
+        scp -P 2222 out/target/product/$1/"cm-10-"$a"-EXPERIMENTAL-"$1"-CM-10-NIGHTLY-"$b".zip" benjamingwynn@upload.goo.im:public_html/$1/CyanogenMod10/$e/$c"_"$d/"CM10-"$c".zip"
         clear
         echo "Done! Build is at http://goo.im/devs/benjamingwynn/CyanogenMod10"
     fi
