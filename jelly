@@ -71,6 +71,68 @@ echo "Working..."
 cd ~/cm-jb
 source build/envsetup.sh; 
 export USE_CCACHE=1
+echo "Run rallapag's script"
+
+## BEGIN STRIP SCRIPT
+
+# This script has to be executed from root of your Android build
+# So change to root of your Android folder before executing this script
+# Adding curent directory path to a variable
+android_dir=$(pwd)
+
+DIR[1]=$android_dir/packages/apps/CMWallpapers/res
+DIR[2]=$android_dir/packages/apps/Trebuchet/res
+
+for i in {1..2}
+  do
+	cd ${DIR[$i]}
+	echo "Current dir is: ${DIR[$i]}"
+
+	dirid1="drawable-mdpi"
+	if [ -d "$dirid1" ]; then
+	   cd $dirid1
+	   for file1 in *
+	   do
+	      test -f ../drawable-hdpi/$file1 && rm ../drawable-hdpi/$file1
+	      test -f ../drawable-xhdpi/$file1 && rm ../drawable-xhdpi/$file1
+	   done
+	cd ../
+	fi
+
+	dirid7="drawable-nodpi"
+	if [ -d "$dirid7" ]; then
+	   cd $dirid7
+	   for file7 in *
+	   do
+	      test -f ../drawable-sw600dp-nodpi/$file7 && rm ../drawable-sw600dp-nodpi/$file7
+	      test -f ../drawable-sw720dp-nodpi/$file7 && rm ../drawable-sw720dp-nodpi/$file7
+	      test -f ../drawable-xhdpi/$file7 && rm ../drawable-xhdpi/$file7
+	   done
+	   cd ../
+	fi
+
+	dirid8="drawable-sw600dp-mdpi"
+	if [ -d "$dirid8" ]; then
+	   cd $dirid8
+	   for file8 in *
+	   do
+	      test -f ../drawable-sw600dp-hdpi/$file8 && rm ../drawable-sw600dp-hdpi/$file8
+	      test -f ../drawable-sw600dp-xhdpi/$file8 && rm ../drawable-sw600dp-xhdpi/$file8
+	   done
+	   cd ../
+	fi
+
+find -type d -empty -delete
+
+## At the moment in Trebuchet drawable-sw720dp-nodpi images are old CM9 so deleting the folder by default
+	if [ $i -eq 2 ]; then
+	   rm -rf drawable-sw720dp-nodpi
+	fi
+
+done
+
+## END!
+
 echo "Compile for the $1..."
 lunch cm_$1-$2
 echo "Syncing..."
