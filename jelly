@@ -78,7 +78,7 @@ echo "Run rallapag's script"
 # This script has to be executed from root of your Android build
 # So change to root of your Android folder before executing this script
 # Adding curent directory path to a variable
-android_dir=$(pwd)
+android_dir=~/cm-jb
 
 DIR[1]=$android_dir/packages/apps/CMWallpapers/res
 DIR[2]=$android_dir/packages/apps/Trebuchet/res
@@ -132,7 +132,7 @@ find -type d -empty -delete
 done
 
 ## END!
-
+cd ~/cm-jb
 echo "Compile for the $1..."
 lunch cm_$1-$2
 echo "Syncing..."
