@@ -32,7 +32,4 @@
        <project name="benjamingwynn/android_hardware_qcom_media" path="hardware/qcom/media" remote="octocat" />
        <remove-project name="CyanogenMod/android_hardware_msm7k" />
        <project name="benjamingwynn/android_hardware_msm7k" path="hardware/msm7k" remote="octocat" />
-       <!-- Fix RIL -->
-       <remove-project name="CyanogenMod/android_hardware_ril" />
-       <project name="benjamingwynn/android_hardware_ril" path="hardware/ril" remote="octocat" />
    </manifest>
