@@ -32,4 +32,6 @@
        <project name="benjamingwynn/android_hardware_qcom_media" path="hardware/qcom/media" remote="octocat" />
        <remove-project name="CyanogenMod/android_hardware_msm7k" />
        <project name="benjamingwynn/android_hardware_msm7k" path="hardware/msm7k" remote="octocat" />
+       <remove-project name="CyanogenMod/android_hardware_qcom_audio" />
+       <project name="benjamingwynn/android_hardware_qcom_audio" path="hardware/qcom/audio" remote="octocat" />
    </manifest>
