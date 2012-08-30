@@ -4,6 +4,21 @@
 
 #- jellyhelp :)
 
+if [ "$1" = -g ] || [ "$2" = -g ] || [ "$3" = -g ] || [ "$4" = -g ] || [ "$5" = -g ] || [ "$6" = -g ]
+  then
+     clear
+     echo "Updating from github..."
+     echo ""
+     echo "Cleaning up any update mess"
+     rm -rf cm_marvel_jellybean_port
+     echo "Updating script..."
+     git clone git://github.com/benjamingwynn/cm_marvel_jellybean_port.git
+     cp ~/cm_marvel_jellybean_port/jelly ~/jelly
+     clear
+     echo "The latest version of the script will be used on the next launch."
+     echo ""
+  fi
+
 if [ "$1" = "-?" ]
   then
      clear
@@ -16,6 +31,7 @@ if [ "$1" = "-?" ]
      echo ""
      echo "-u    Upload to goo.im"
      echo "-d    Make dirty"
+     echo "-g    Update from github"
      echo ""
      echo "Types:"
      echo ""
@@ -64,12 +80,6 @@ fi
 #- ...otherwise, carry on.
 echo "Jellybean Nightly build script"
 echo " "
-echo "Cleaning up any update mess"
-rm -rf cm_marvel_jellybean_port
-echo "Updating script..."
-git clone git://github.com/benjamingwynn/cm_marvel_jellybean_port.git
-cp ~/cm_marvel_jellybean_port/jelly ~/jelly
-echo "The latest version of the script will be used on the next launch."
 echo "Working..."
 cd ~/cm-jb
 source build/envsetup.sh; 
