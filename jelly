@@ -17,6 +17,7 @@ if [ "$1" = -g ] || [ "$2" = -g ] || [ "$3" = -g ] || [ "$4" = -g ] || [ "$5" = 
      clear
      echo "The latest version of the script will be used on the next launch."
      echo ""
+     exit
   fi
 
 if [ "$1" = "-?" ]
