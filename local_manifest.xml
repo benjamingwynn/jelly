@@ -10,7 +10,6 @@
        <!-- benjamingwynn's CyanogenMod 10 source. Please see the readme before you continue. -->
 
        <!-- Kernel -->
-       <remove-project name="kernel/htc/msm7227" />
        <project name="benjamingwynn/cm_kernel_htc_msm7227" path="kernel/htc/msm7227" remote="octocat" revision="jellybean" />
        <!-- Sync vendors -->
        <project name="benjamingwynn/cm_vendor_qcom_msm7x27" path="vendor/qcom/msm7x27" remote="octocat" />
