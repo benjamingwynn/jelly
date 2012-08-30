@@ -89,8 +89,8 @@ git fetch http://review.cyanogenmod.com/CyanogenMod/android_bionic refs/changes/
 cd ~/cm-jb/hardware/libhardware_legacy
 git reset --hard HEAD
 git pull
-git revert 12c07ca06b41e1346874574747c401f6627ebe38
-git revert 6f65b558e970cd1ad8b228e866a824a8ef7e9560
+git revert 12c07ca06b41e1346874574747c401f6627ebe38 --no-edit -n
+git revert 6f65b558e970cd1ad8b228e866a824a8ef7e9560 --no-edit -n
 cd ~/cm-jb
 if [ "$3" = -d ] || [ "$4" = -d ]
   then
