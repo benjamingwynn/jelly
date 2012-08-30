@@ -79,11 +79,16 @@ lunch cm_$1-$2
 echo "Syncing..."
 repo sync
 echo "Applying patches to build"
+cd ~/cm-jb/hardware/qcom/display
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_display refs/changes/39/22039/3 && git checkout FETCH_HEAD
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_display refs/changes/67/22467/1 && git checkout FETCH_HEAD
+cd ~/cm-jb/hardware/msm7k
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_msm7k refs/changes/58/15058/3 && git checkout FETCH_HEAD
+cd ~/cm-jb/bionic
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_bionic refs/changes/31/14631/1 && git checkout FETCH_HEAD
 cd ~/cm-jb/hardware/libhardware_legacy
+git reset --hard HEAD
+git pull
 git revert 12c07ca06b41e1346874574747c401f6627ebe38
 git revert 6f65b558e970cd1ad8b228e866a824a8ef7e9560
 cd ~/cm-jb
@@ -94,7 +99,7 @@ if [ "$3" = -d ] || [ "$4" = -d ]
      echo "Cleaning..."
      make clean
      make clobber
-endif;
+fi
 echo "Compiling..."
 make -j8 bacon
 echo "Setting dates..."
