@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+http://git.cryptomilk.org/projects/marvel/kernel_htc_msm7227.git/log/?h=jellybean<?xml version="1.0" encoding="UTF-8"?>
   <manifest>
      <remote  name="octocat"
        fetch="https://github.com/"
@@ -9,8 +9,9 @@
 
        <!-- benjamingwynn's CyanogenMod 10 source. Please see the readme before you continue. -->
 
-       <!-- Use modpunks kernel -->
-       <project name="projects/marvel/kernel_htc_msm7227.git" path="kernel/htc/msm7227" remote="modpunk" revision="jellybean" />
+       <!-- Kernel -->
+       <remove-project name="kernel/htc/msm7227" />
+       <project name="benjamingwynn/kernel_htc_msm7227.git" path="kernel/htc/msm7227" remote="octocat" revision="jellybean" />
        <!-- Sync vendors -->
        <project name="benjamingwynn/cm_vendor_qcom_msm7x27" path="vendor/qcom/msm7x27" remote="octocat" />
        <project name="benjamingwynn/cm_vendor_htc_marvelc" path="vendor/htc/marvelc" remote="octocat" />
