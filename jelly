@@ -45,24 +45,6 @@ if [ "$1" = "-?" ]
      exit
 fi
 
-#- Make sure we are using the script correctly, if we aren't then throw errors...
-
-if [ "$1" = "-u" ]
-  then
-     echo "FATAL: -u flag given before device flag."
-     echo " "
-     echo "For usage, type -?"
-     exit
-fi
-
-if [ "$2" = "-u" ]
-  then
-     echo "FATAL: -u flag given before type flag."
-     echo " "
-     echo "For usage, type -?"
-     exit
-fi
-
 if [ "$1" = "" ]
   then
      echo "FATAL: No device flag given, stopping."
