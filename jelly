@@ -30,10 +30,11 @@ if [ "$1" = "-?" ]
      echo " "
      echo "Flags:"
      echo ""
-     echo "-u    Upload to goo.im"
-     echo "-d    Make dirty"
-     echo "-g    Update from github"
-     echo "-l    Log the compile"
+     echo "-u    Upload to goo.im      "
+     echo "-d    Make dirty            "
+     echo "-g    Update from github    "
+     echo "-l    Log the compie        "
+     echo "-n    No compile            "
      echo ""
      echo "Types:"
      echo ""
@@ -86,16 +87,20 @@ git revert 6f65b558e970cd1ad8b228e866a824a8ef7e9560 --no-edit -n
 
 
 cd ~/cm-jb
-if [ "$3" = -d ] || [ "$4" = -d ]|| [ "$5" = -d ]
-  then
-     echo "Making dirty..."
-  else
-     echo "Cleaning..."
-     make clean
-     make clobber
+if [ "$3" = -n ] || [ "$4" = -n ] || [ "$5" = -n ] || [ "$6" = -n ]
+echo "Not compiling"
+else
+  if [ "$3" = -d ] || [ "$4" = -d ] || [ "$5" = -d ] || [ "$6" = -d ]
+   then
+      echo "Making dirty..."
+   else
+      echo "Cleaning..."
+      make clean
+      make clobber
+  fi
 fi
 echo "Compiling..."
-if [ "$3" = -l ] || [ "$4" = -l ]|| [ "$5" = -l ]
+if [ "$3" = -l ] || [ "$4" = -l ] || [ "$5" = -l ] || [ "$6" = -l ]
   then
      echo "Logging compile to file"
      logfile=~/buildlog$RANDOM
@@ -122,7 +127,7 @@ if [ "$date3" = "10" ]; then date4="October"; fi
 if [ "$date3" = "11" ]; then date4="November"; fi
 if [ "$date3" = "12" ]; then date4="December"; fi
 date5="$(date +%Y)"
-if [ "$3" = -u ] || [ "$4" = -u ] || [ "$5" = -u ]
+if [ "$3" = -u ] || [ "$4" = -u ] || [ "$5" = -u ] || [ "$6" = -u ]
   then
     if [ -f $date2 ]
       then
