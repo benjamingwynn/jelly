@@ -66,7 +66,7 @@ echo "Jellybean Nightly build script"
 echo " "
 echo "Working..."
 cd ~/cm-jb
-source build/envsetup.sh; 
+source build/envsetup.sh
 export USE_CCACHE=1
 echo "Compile for the $1..."
 lunch cm_$1-$2
@@ -97,10 +97,13 @@ fi
 echo "Compiling..."
 if [ "$3" = -l ] || [ "$4" = -l ]|| [ "$5" = -l ]
   then
+     echo "Logging compile to file"
      logfile=~/buildlog$RANDOM
      make -j8 bacon > $logfile
      echo "Info: Saved at ~/$logfile"
   else
+     echo "Not logging compile"
+     make -j8 bacon 
 fi
 echo "Setting dates..."
 date1="$(date +%Y%m%d)"
