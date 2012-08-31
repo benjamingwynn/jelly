@@ -76,8 +76,8 @@ repo sync
 # Patch up the working tree
 
 echo "Applying patches to build"
-cd ~/cm-jb/bionic
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_bionic refs/changes/31/14631/1 && git checkout FETCH_HEAD
+#cd ~/cm-jb/bionic
+#git fetch http://review.cyanogenmod.com/CyanogenMod/android_bionic refs/changes/31/14631/1 && git checkout FETCH_HEAD
 cd ~/cm-jb/hardware/libhardware_legacy
 git reset --hard HEAD
 git pull
