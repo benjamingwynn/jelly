@@ -78,6 +78,9 @@ repo sync
 # Patch up the working tree
 
 echo "Applying patches to build..."
+cd ~/cm-jb/frameworks/av
+echo "Revering newer framework_av patches."
+git reset --hard 2deab264a64c1973b127ef53baeb9941ee98fc98
 cd ~/cm-jb/hardware/libhardware_legacy
 echo "Revert newer libhardware_legacy patches."
 git reset --hard 3d7eb0587ea611f4437ef4e9c323988788cd2c23
