@@ -77,13 +77,15 @@ repo sync
 
 # Patch up the working tree
 
-echo "Applying patches to build"
+echo "Applying patches to build..."
 cd ~/cm-jb/hardware/libhardware_legacy
-#git reset --hard HEAD
-#git pull
-#git revert 12c07ca06b41e1346874574747c401f6627ebe38 --no-edit
-#git revert 6f65b558e970cd1ad8b228e866a824a8ef7e9560 --no-edit
-
+echo "Revert newer libhardware_legacy patches."
+git revert I385588df136f0986e64824643b7a11c9130a6a46 --no-edit
+git revert If72e57107e15547b1754c9c1f71f51e02598176f --no-edit
+git revert Icb17006765bf30b69229571cd181f7160d301a87 --no-edit
+git revert I4316ac03447870c04765427d202d9d35937c65f1 --no-edit
+git revert Id7bad9cf995409559abbf08806dafdbca2916bfb --no-edit
+git revert Iaa17aad348675e8077b45d751b930b7ce3878782 --no-edit
 
 cd ~/cm-jb
 if [ "$3" = -n ] || [ "$4" = -n ] || [ "$5" = -n ] || [ "$6" = -n ]
