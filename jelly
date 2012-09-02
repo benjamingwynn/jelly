@@ -85,19 +85,17 @@ repo sync
 #git reset --hard 3d7eb0587ea611f4437ef4e9c323988788cd2c23
 
 cd ~/cm-jb
-if [ "$3" = -n ] || [ "$4" = -n ] || [ "$5" = -n ] || [ "$6" = -n ]
- then
-  echo "Not compiling"
- else
+if [ "$3" = -n ] || [ "$4" = -n ] || [ "$5" = -n ] || [ "$6" = -n ]; then
+echo "Not compiling"
+else
   if [ "$3" = -d ] || [ "$4" = -d ] || [ "$5" = -d ] || [ "$6" = -d ]
-   then
-      echo "Making dirty..."
-   else
-      echo "Cleaning..."
-      make clean
-      make clobber
+    then
+        echo "Making dirty..."
+    else
+        echo "Cleaning..."
+        make clean
+        make clobber
   fi
-fi
 echo "Compiling..."
 if [ "$3" = -l ] || [ "$4" = -l ] || [ "$5" = -l ] || [ "$6" = -l ]
   then
@@ -107,7 +105,8 @@ if [ "$3" = -l ] || [ "$4" = -l ] || [ "$5" = -l ] || [ "$6" = -l ]
      echo "Info: Saved at ~/$logfile"
   else
      echo "Not logging compile"
-     make -j8 bacon 
+     make -j8 bacon
+fi
 fi
 echo "Setting dates..."
 date1="$(date +%Y%m%d)"
