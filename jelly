@@ -2,8 +2,6 @@
 #
 # for benjamingwynn's jellybean marvel builds.
 
-#- jellyhelp :)
-
 if [ "$1" = -g ] || [ "$2" = -g ] || [ "$3" = -g ] || [ "$4" = -g ] || [ "$5" = -g ] || [ "$6" = -g ]
   then
      clear
@@ -18,7 +16,6 @@ if [ "$1" = -g ] || [ "$2" = -g ] || [ "$3" = -g ] || [ "$4" = -g ] || [ "$5" = 
      chmod a+x ~/jelly
      clear
      echo "The latest version of the script will be used on the next launch."
-
 fi
 
 if [ "$1" = "-?" ]
