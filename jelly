@@ -139,7 +139,7 @@ if [ "$3" = -u ] || [ "$4" = -u ] || [ "$5" = -u ] || [ "$6" = -u ]
       else
         touch $date2
         echo "Uploading to Goo.im..."
-        scp -P 2222 out/target/product/$1/"cm-10-"$date1"-EXPERIMENTAL-"$1"-CM-10-NIGHTLY-"$date2".zip" benjamingwynn@upload.goo.im:public_html/$1/CyanogenMod10/$date5/$date3"_"$date4/"CM10-"$date3".zip"
+        scp -P 2222 out/target/product/$1/"cm-10-"$date1"-EXPERIMENTAL-"$1"-CM-10-NIGHTLY-"$date2".zip" benjamingwynn@upload.goo.im:public_html/$1/CyanogenMod10/$date3"_"$date4/"CM10-"$date2".zip"
         echo ". "
         echo ".. "
         echo "... "
