@@ -12,10 +12,10 @@ if [ "$1" = -g ] || [ "$2" = -g ] || [ "$3" = -g ] || [ "$4" = -g ] || [ "$5" = 
      echo "Updating script..."
      git clone git://github.com/benjamingwynn/cm_marvel_jellybean_port.git
      cp ~/cm_marvel_jellybean_port/jelly ~/jelly
-     cp ~/cm_marvel_jellybean_port/local_manifest.xml ~/cm-jb/.repo/local_manifest.xml
      chmod a+x ~/jelly
      clear
      echo "The latest version of the script will be used on the next launch."
+     cp ~/cm_marvel_jellybean_port/local_manifest.xml ~/cm-jb/.repo/local_manifest.xml
 fi
 
 if [ "$1" = "-?" ]
