@@ -17,12 +17,9 @@ Credits
 Known bugs
 ==============================
 
-- Any bugs that CM9 has
 - Phone and any other mobile connection is broken (wifi and bluetooth work)
-- Widgets on the launcher are too big, and hang off the bottom and into the dock
-- Google now doesn't work
-- Audio doesn't play through headphones
 - Video playback doesn't work
+- Sound can be buggy
 - Microphone doesn't work (in theory, this is also why Google Now doesn't)
 - Camera doesn't work (that's why the app hides from the drawer)
 - Some very minor graphic errors, such as the notification drawer being slow.
@@ -31,7 +28,7 @@ How to build
 ==============================
 
 - Set up your build enviroment
-- Use the local_manifest.xml is this repo (add it to the .repo folder) 
+- Use the following repo: repo init -u git://github.com/TeamICS/manifest_ics_cm.git -b jellybean
 - Use the patches in the "jelly" script
 - Run this command: "repo sync; source build/envsetup.sh; lunch cm_marvel-eng; export USE_CCACHE=1"
 - Do the build command: "make -jx bacon"
