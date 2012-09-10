@@ -63,14 +63,12 @@ fi
 #- ...otherwise, carry on.
 echo "Jellybean Nightly build script"
 echo " "
+cd ~/cm-jb
 echo "Syncing..."
 repo sync
 echo "Working..."
-cd ~/cm-jb
 source build/envsetup.sh
 export USE_CCACHE=1
-echo "Compile for the $1..."
-lunch cm_$1-$2
 
 # Patch up the working tree
 
@@ -97,11 +95,15 @@ else
 echo "Compiling..."
 if [ "$3" = -l ] || [ "$4" = -l ] || [ "$5" = -l ] || [ "$6" = -l ]
   then
+     echo "Compile for the $1..."
+     lunch cm_$1-$2
      echo "Logging compile to file"
      logfile=~/buildlog$RANDOM
      make -j8 bacon > $logfile
      echo "Info: Saved at ~/$logfile"
   else
+     echo "Compile for the $1..."
+     lunch cm_$1-$2
      echo "Not logging compile"
      make -j8 bacon
 fi
