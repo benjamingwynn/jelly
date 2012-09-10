@@ -63,14 +63,14 @@ fi
 #- ...otherwise, carry on.
 echo "Jellybean Nightly build script"
 echo " "
+echo "Syncing..."
+repo sync
 echo "Working..."
 cd ~/cm-jb
 source build/envsetup.sh
 export USE_CCACHE=1
 echo "Compile for the $1..."
 lunch cm_$1-$2
-echo "Syncing..."
-repo sync
 
 # Patch up the working tree
 
