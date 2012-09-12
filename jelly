@@ -63,7 +63,8 @@ fi
 #- ...otherwise, carry on.
 echo "Jellybean Nightly build script"
 echo " "
-cd ~/cm-jb
+echo "Navigate to folder"
+cd cm-jb
 echo "Syncing..."
 repo sync
 echo "Working..."
