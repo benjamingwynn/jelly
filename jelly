@@ -133,6 +133,7 @@ then
     then
     echo "FORCE uploading.
     else
+    echo "Uploading normally..."
       if [ -f $date2 ]
         then
           echo ". "
@@ -152,7 +153,7 @@ echo ".. "
 echo "... "
 echo ".... "
 echo " "
-echo "Notice: Uploaded to http://goo.im/devs/benjamingwynn/$1/CyanogenMod10"fi
+echo "Notice: Uploaded to http://goo.im/devs/benjamingwynn/$1/CyanogenMod10"
 else
     echo ". "
     echo ".. "
