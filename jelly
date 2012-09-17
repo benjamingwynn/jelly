@@ -130,7 +130,7 @@ date5="$(date +%Y)"
 if [ "$3" = -u ] || [ "$4" = -u ] || [ "$5" = -u ] || [ "$6" = -u ] || [ "$3" = -fu ] || [ "$4" = -fu ] || [ "$5" = -fu ] || [ "$6" = -fu ]
 then
     if [ "$3" = -fu ] || [ "$4" = -fu ] || [ "$5" = -fu ] || [ "$6" = -fu ]
-      echo "FORCE uploading.
+    echo "FORCE uploading.
     else
       if [ -f $date2 ]
         then
@@ -142,6 +142,7 @@ then
           echo "Notice: Refusing to upload. CM10 has already been uploaded today."
           exit
       fi
+    fi
 touch $date2
 echo "Uploading to Goo.im..."
 scp -P 2222 out/target/product/$1/"cm-10-"$date1"-EXPERIMENTAL-"$1"-CM-10-NIGHTLY-"$date2".zip" benjamingwynn@upload.goo.im:public_html/$1/CyanogenMod10/$date3"_"$date4"_"$date5/"CM10-"$date2".zip"
