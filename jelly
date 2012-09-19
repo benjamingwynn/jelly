@@ -93,6 +93,7 @@ else
         echo "Cleaning..."
         make clean
         make clobber
+        rm -rf out
   fi
 echo "Compiling..."
 if [ "$3" = -l ] || [ "$4" = -l ] || [ "$5" = -l ] || [ "$6" = -l ]
