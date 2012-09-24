@@ -68,6 +68,8 @@ echo "Navigate to folder"
 cd cm-jb
 echo "Syncing..."
 repo sync
+echo "Patching..."
+./patch.sh
 echo "Working..."
 source build/envsetup.sh
 export USE_CCACHE=1
