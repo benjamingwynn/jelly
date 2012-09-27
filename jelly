@@ -11,8 +11,9 @@ if [ "$1" = -g ] || [ "$2" = -g ] || [ "$3" = -g ] || [ "$4" = -g ] || [ "$5" = 
      rm -rf cm_marvel_jellybean_port
      echo "Updating script..."
      git clone git://github.com/benjamingwynn/cm_marvel_jellybean_port.git
-     cp ~/cm_marvel_jellybean_port/jelly ~/jelly
+     cp ~/cm_marvel_jellybean_port/* ~
      chmod a+x ~/jelly
+     rm ~/README.md
      clear
      echo "The latest version of the script will be used on the next launch."
      exit
