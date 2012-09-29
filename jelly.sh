@@ -10,9 +10,9 @@ if [ "$1" = -g ] || [ "$2" = -g ] || [ "$3" = -g ] || [ "$4" = -g ] || [ "$5" = 
      echo "Cleaning up any update mess"
      rm -rf jelly
      echo "Updating script..."
-     git clone git://github.com/benjamingwynn/jelly.git
-     cp ~/jelly/jelly.sh ~/jelly
-     cp ~/jelly/patch.sh ~/patch.sh
+     git clone git://github.com/benjamingwynn/jelly.git jellygit
+     cp ~/jellygit/jelly.sh ~/jelly
+     cp ~/jellygit/patch.sh ~/patch.sh
      chmod a+x ~/jelly.sh
      chmod a+x ~/patch.sh
      ln -s ~/jelly.sh ~/jelly
