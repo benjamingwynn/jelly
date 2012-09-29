@@ -8,11 +8,12 @@ if [ "$1" = -g ] || [ "$2" = -g ] || [ "$3" = -g ] || [ "$4" = -g ] || [ "$5" = 
      echo "Updating from github..."
      echo ""
      echo "Cleaning up any update mess"
-     rm -rf cm_marvel_jellybean_port
+     rm -rf jelly
      echo "Updating script..."
-     git clone git://github.com/benjamingwynn/cm_marvel_jellybean_port.git
-     cp ~/cm_marvel_jellybean_port/* ~
+     git clone git://github.com/benjamingwynn/jelly.git
+     cp ~/jelly/* ~
      chmod a+x ~/jelly
+     chmod a+x ~/patch.sh
      rm ~/README.md
      clear
      echo "The latest version of the script will be used on the next launch."
@@ -33,8 +34,9 @@ if [ "$1" = "-?" ]
      echo "-d    Make dirty            "
      echo "-g    Update from github    "
      echo "-l    Log the compie        "
-     echo "-n    No compile            "
      echo "-fu   Force upload          "
+     echo "-nc   No compile            "
+     echo "-ns   No sync               "
      echo ""
      echo "Types:"
      echo ""
@@ -67,26 +69,19 @@ echo "Jellybean Nightly build script"
 echo " "
 echo "Navigate to folder"
 cd cm-jb
-echo "Syncing..."
-repo sync
+if [ "$3" = -ns ] || [ "$4" = -ns ] || [ "$5" = -ns ] || [ "$6" = -ns ]; then
+	echo "Not syncing"
+else
+	echo "Syncing..."
+	repo sync
+fi
 echo "Patching..."
 ./patch.sh
 echo "Working..."
 source build/envsetup.sh
 export USE_CCACHE=1
-
-# Patch up the working tree
-
-#echo "Applying patches to build..."
-#cd ~/cm-jb/frameworks/av
-#echo "Revering newer framework_av patches."
-#git reset --hard d34a90fe138fae3dce2b328ea6fe2308a5457eeb
-#cd ~/cm-jb/hardware/libhardware_legacy
-#echo "Revert newer libhardware_legacy patches."
-#git reset --hard 3d7eb0587ea611f4437ef4e9c323988788cd2c23
-
 cd ~/cm-jb
-if [ "$3" = -n ] || [ "$4" = -n ] || [ "$5" = -n ] || [ "$6" = -n ]; then
+if [ "$3" = -nc ] || [ "$4" = -nc ] || [ "$5" = -nc ] || [ "$6" = -nc ]; then
 echo "Not compiling"
 else
   if [ "$3" = -d ] || [ "$4" = -d ] || [ "$5" = -d ] || [ "$6" = -d ]
