@@ -7,16 +7,15 @@ if [ "$1" = -g ] || [ "$2" = -g ] || [ "$3" = -g ] || [ "$4" = -g ] || [ "$5" = 
      clear
      echo "Updating from github..."
      echo ""
-     echo "Cleaning up any update mess"
-     rm -rf jelly
      echo "Updating script..."
+     rm -rf ~/jellygit
+     rm ~/jelly
      git clone git://github.com/benjamingwynn/jelly.git jellygit
-     cp ~/jellygit/jelly.sh ~/jelly
+     cp ~/jellygit/jelly.sh ~/jelly.sh
      cp ~/jellygit/patch.sh ~/patch.sh
      chmod a+x ~/jelly.sh
      chmod a+x ~/patch.sh
      ln -s ~/jelly.sh ~/jelly
-     rm ~/README.md
      clear
      echo "The latest version of the script will be used on the next launch."
      exit
