@@ -11,9 +11,11 @@ if [ "$1" = -g ] || [ "$2" = -g ] || [ "$3" = -g ] || [ "$4" = -g ] || [ "$5" = 
      rm -rf jelly
      echo "Updating script..."
      git clone git://github.com/benjamingwynn/jelly.git
-     cp ~/jelly/* ~
-     chmod a+x ~/jelly
+     cp ~/jelly/jelly.sh ~/jelly
+     cp ~/jelly/patch.sh ~/patch.sh
+     chmod a+x ~/jelly.sh
      chmod a+x ~/patch.sh
+     ln -s ~/jelly.sh ~/jelly
      rm ~/README.md
      clear
      echo "The latest version of the script will be used on the next launch."
