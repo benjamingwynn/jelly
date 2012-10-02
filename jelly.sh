@@ -124,20 +124,6 @@ fi
 echo "Setting dates..."
 date1="$(date +%Y%m%d)"
 date2="$(date +%d-%m-%Y)"
-date3="$(date +%m)"
-if [ "$date3" = "01" ]; then date4="January"; fi
-if [ "$date3" = "02" ]; then date4="February"; fi
-if [ "$date3" = "03" ]; then date4="March"; fi
-if [ "$date3" = "04" ]; then date4="April"; fi
-if [ "$date3" = "05" ]; then date4="May"; fi
-if [ "$date3" = "06" ]; then date4="June"; fi
-if [ "$date3" = "07" ]; then date4="July"; fi
-if [ "$date3" = "08" ]; then date4="August"; fi
-if [ "$date3" = "09" ]; then date4="September"; fi
-if [ "$date3" = "10" ]; then date4="October"; fi
-if [ "$date3" = "11" ]; then date4="November"; fi
-if [ "$date3" = "12" ]; then date4="December"; fi
-date5="$(date +%Y)"
 
 if [ "$3" = -fu ] || [ "$4" = -fu ] || [ "$5" = -fu ] || [ "$6" = -fu ]
 then
@@ -158,7 +144,7 @@ then
     fi
   touch $date2
   echo "Uploading to Goo.im..."
-  scp -P 2222 out/target/product/$1/"cm-10-"$date1"-EXPERIMENTAL-"$1"-CM-10-NIGHTLY-"$date2".zip" benjamingwynn@upload.goo.im:public_html/$1/CyanogenMod10/$date3"_"$date4"_"$date5/"CM10-"$date2".zip"
+  scp -P 2222 out/target/product/$1/"cm-10-"$date1"-EXPERIMENTAL-"$1"-CM-10-NIGHTLY-"$date2".zip" benjamingwynn@upload.goo.im:public_html/$1/CyanogenMod10/"CyanogenMod10-benjamingwynn-"$date1".zip"
   echo ". "
   echo ".. "
   echo "... "
