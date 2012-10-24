@@ -39,13 +39,14 @@ if [ "$1" = "-?" ]
      echo " "
      echo "Flags:"
      echo ""
-     echo "-u    Upload to goo.im      "
-     echo "-d    Make dirty            "
-     echo "-g    Update from github    "
-     echo "-l    Log the compie        "
-     echo "-fu   Force upload          "
-     echo "-nc   No compile            "
-     echo "-ns   No sync               "
+     echo "-u        Upload to goo.im      "
+     echo "-d        Make dirty            "
+     echo "-g        Update from github    "
+     echo "-l        Log the compie        "
+     echo "-fu       Force upload          "
+     echo "-nc       No compile            "
+     echo "-ns       No sync               "
+     echo "-badass   Build with -0               "
      echo ""
      echo "Types:"
      echo ""
@@ -89,33 +90,39 @@ source build/envsetup.sh
 export USE_CCACHE=1
 cd ~/cm-jb
 if [ "$3" = -nc ] || [ "$4" = -nc ] || [ "$5" = -nc ] || [ "$6" = -nc ]; then
-echo "Not compiling"
-else
-  if [ "$3" = -d ] || [ "$4" = -d ] || [ "$5" = -d ] || [ "$6" = -d ]
-    then
-        echo "Making dirty..."
-    else
-        echo "Cleaning..."
-        make clean
-        make clobber
-        rm -rf out
-  fi
-echo "Compiling..."
-if [ "$3" = -l ] || [ "$4" = -l ] || [ "$5" = -l ] || [ "$6" = -l ]
-  then
-     echo "Compile for the $1..."
-     lunch cm_$1-$2
-     echo "Logging compile to file"
-     logfile=~/buildlog$RANDOM
-     make -j8 bacon > $logfile
-     echo "Info: Saved at ~/$logfile"
-  else
-     echo "Compile for the $1..."
-     lunch cm_$1-$2
-     echo "Not logging compile"
-     make -j8 bacon
+	echo "Not compiling"
+	else
+ 	 if [ "$3" = -d ] || [ "$4" = -d ] || [ "$5" = -d ] || [ "$6" = -d ]
+ 	  then
+ 	       echo "Making dirty..."
+  	  else
+ 	       echo "Cleaning..."
+ 	       make clean
+ 	       make clobber
+	        rm -rf out
+	  fi
+	echo "Compiling..."
+	if [ "$3" = -l ] || [ "$4" = -l ] || [ "$5" = -l ] || [ "$6" = -l ]
+	  then
+ 	    echo "Compile for the $1..."
+ 	    lunch cm_$1-$2
+ 	    echo "Logging compile to file"
+  	   logfile=~/buildlog$RANDOM
+ 	    make -j8 bacon > $logfile
+	     echo "Info: Saved at ~/$logfile"
+	  else
+ 	    echo "Compile for the $1..."
+ 	    lunch cm_$1-$2
+  	   echo "Not logging compile"
+		if [ "$3" = -badass ] || [ "$4" = -badass ] || [ "$5" = -badass ] || [ "$6" = -basass ]
+		 then
+    			make -j0 bacon
+		else
+			make -j8 bacon
+		fi
+	fi
 fi
-fi
+
 echo "Setting dates..."
 date1="$(date +%Y%m%d)"
 date2="$(date +%d-%m-%Y)"
