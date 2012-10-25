@@ -115,8 +115,8 @@ if [ "$3" = -nc ] || [ "$4" = -nc ] || [ "$5" = -nc ] || [ "$6" = -nc ]; then
  	    lunch cm_$1-$2
   	   echo "Not logging compile"
 		if [ "$3" = -badass ] || [ "$4" = -badass ] || [ "$5" = -badass ] || [ "$6" = -basass ]
-		 then
-    			make -j0 bacon
+		then
+    			realmake -j bacon
 		else
 			make -j8 bacon
 		fi
