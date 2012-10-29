@@ -148,6 +148,7 @@ then
   echo "Uploading to Goo.im..."
   chmod 644 out/target/product/$1/"cm-10-"$date1"-UNOFFICIAL-"$1".zip"
   scp -P 2222 out/target/product/$1/"cm-10-"$date1"-UNOFFICIAL-"$1".zip" benjamingwynn@upload.goo.im:public_html/$1/CyanogenMod10/"CyanogenMod10-benjamingwynn-"$date1".zip"
+  ssh benjamingwynn@upload.goo.im chmod 644 public_html/$1/CyanogenMod10/"CyanogenMod10-benjamingwynn-"$date1".zip"
   echo ". "
   echo ".. "
   echo "... "
